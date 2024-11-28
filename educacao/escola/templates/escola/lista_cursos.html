@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Cursos</title>
+
+    
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+      
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+       
+        li {
+            background-color: #fff;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+        }
+
+        
+        li:nth-child(odd) {
+            background-color: #e9f7fd;
+        }
+
+       
+        li:hover {
+            background-color: #f2f2f2;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Cursos</h1>
+    <ul>
+        {% for curso in cursos %}
+            <li>{{ curso.titulo }} - {{ curso.descricao }}</li>
+        {% empty %}
+            <li>Nenhum curso encontrado.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+
